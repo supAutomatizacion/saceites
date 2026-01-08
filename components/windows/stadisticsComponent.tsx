@@ -1,9 +1,9 @@
 
 
-export default function Page() {
+export default function StadisticsComponent() {
   return (
-    <div>
-      <main >
+    <div className="bg-red-400">
+      <main>
         <div>
           PAGINA DE ESTADISTICAS
         </div>
