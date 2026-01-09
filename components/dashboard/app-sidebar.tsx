@@ -64,7 +64,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     <Sidebar collapsible="offcanvas" {...props}>
       <SidebarHeader>
         <Image
-          src="/2.jpg"
+          src="/1.png"
           width={400}
           height={600}
           alt="Picture of the author"

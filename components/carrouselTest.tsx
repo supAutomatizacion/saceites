@@ -10,10 +10,18 @@ import {
     CarouselItem,
 } from "@/components/ui/carousel"
 
+import {
+    AudioLines,
+    Smartphone,
+} from "lucide-react"
+
 import { DataTable } from "@/components/table/data-table"
 import { columns } from "@/components/table/workers-columns"
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Progress } from "@/components/ui/progress"
+
+import Image from "next/image"
 
 const data = [
     {
@@ -45,7 +53,7 @@ export function CarouselPlugin() {
 
     return (
         <Carousel
-            plugins={[plugin.current]}
+            // plugins={[plugin.current]}
             className="w-full h-full"
             onMouseEnter={plugin.current.stop}
             onMouseLeave={plugin.current.reset}
@@ -54,30 +62,84 @@ export function CarouselPlugin() {
                 {Array.from({ length: 5 }).map((_, index) => (
                     <CarouselItem key={index} className="h-full">
                         <div className="flex flex-row gap-4 w-full h-full p-1">
-                            <Card className="h-full flex-1">
-                                <CardContent className="grid grid-cols-2 grid-rows-2 gap-2 justify-center h-full">
-                                    <Avatar className="size-50">
-                                        <AvatarImage src="/sebastian.jpeg" />
-                                        <AvatarFallback>CN</AvatarFallback>
-                                    </Avatar>
-                                    <span className="text-4xl font-semibold">{index + 1} - AA</span>
-                                    <div className="col-span-2">
-                                        <DataTable columns={columns} data={data} />
+                            <div className="h-full flex-1 shadow-xl p-2">
+                                <div className="grid grid-cols-2 grid-rows-2 gap-2 justify-center h-full shadow-2xl">
+                                    <div className="relative w-[160px] h-[160px]">
+                                        <Image
+                                            src="/sebastian.jpeg"
+                                            fill
+                                            sizes="200px"
+                                            alt="Picture of the author"
+                                            className="rounded-lg"
+                                        />
                                     </div>
-                                </CardContent>
-                            </Card>
-                            <Card className="h-full flex-1">
-                                <CardContent className="grid grid-cols-2 grid-rows-2 gap-2 justify-center h-full">
-                                    <Avatar className="size-50">
-                                        <AvatarImage src="/sergio.jpeg" />
-                                        <AvatarFallback>CN</AvatarFallback>
-                                    </Avatar>
-                                    <span className="text-4xl font-semibold">{index + 1} - AA</span>
-                                    <div className="col-span-2">
-                                        <DataTable columns={columns} data={data} />
+
+                                    <div className="flex flex-col gap-10 justify-center">
+                                        <div className="flex flex-col gap-2 justify-end">
+                                            <div className="bg-saceites-2">
+                                                Joanh Sebastian
+                                            </div>
+                                            <div>
+                                                Especialista en electricidad
+                                            </div>
+                                            <div className="flex gap-4">
+                                                <AudioLines />
+                                                <p>MTTO 3</p>
+                                            </div>
+                                            <div className="flex gap-4">
+                                                <Smartphone />
+                                                <p> 312 514 38 36</p>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <p>progreso</p>
+                                            <Progress value={33} />
+                                        </div>
                                     </div>
-                                </CardContent>
-                            </Card>
+                                    <Card className="col-span-2 border-none mx-3 shadow-none">
+                                        <DataTable columns={columns} data={data} />
+                                    </Card>
+                                </div>
+                            </div>
+                            <div className="h-full flex-1 shadow-xl p-2">
+                                <div className="grid grid-cols-2 grid-rows-2 gap-2 justify-center h-full shadow-2xl">
+                                    <div className="relative w-[160px] h-[160px] shadow-2xl">
+                                        <Image
+                                            src="/sergio.jpeg"
+                                            fill
+                                            sizes="200px"
+                                            alt="Picture of the author"
+                                            className="rounded-lg"
+                                        />
+                                    </div>
+
+                                    <div className="flex flex-col gap-10 justify-center">
+                                        <div className="flex flex-col gap-2 justify-end">
+                                            <div className="bg-saceites-2">
+                                                Sergio Pancho
+                                            </div>
+                                            <div>
+                                                Especialista en regriferacion
+                                            </div>
+                                            <div className="flex gap-4">
+                                                <AudioLines />
+                                                <p>MTTO 4</p>
+                                            </div>
+                                            <div className="flex gap-4">
+                                                <Smartphone />
+                                                <p> 312 514 38 36</p>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <p>progreso</p>
+                                            <Progress value={33} />
+                                        </div>
+                                    </div>
+                                    <Card className="col-span-2 border-none mx-3 shadow-none">
+                                        <DataTable columns={columns} data={data} />
+                                    </Card>
+                                </div>
+                            </div>
                         </div>
                     </CarouselItem>
                 ))}
