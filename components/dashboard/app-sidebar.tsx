@@ -2,90 +2,83 @@
 
 import * as React from "react"
 import {
-  IconCamera,
-  IconChartBar,
-  IconDashboard,
-  IconDatabase,
-  IconFileAi,
-  IconFileDescription,
-  IconFileWord,
-  IconFolder,
-  IconHelp,
-  IconInnerShadowTop,
-  IconListDetails,
-  IconReport,
-  IconSearch,
-  IconSettings,
-  IconUsers,
-} from "@tabler/icons-react"
+  Frame,
+  PieChart,
+  SquareTerminal,
+} from "lucide-react"
 
-import { NavDocuments } from "@/components/dashboard/nav-documents"
 import { NavMain } from "@/components/dashboard/nav-main"
-// import { NavSecondary } from "@/components/nav-secondary"
-
+import { NavProjects } from "@/components/dashboard/nav-projects"
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
+  SidebarRail,
 } from "@/components/ui/sidebar"
 
+import Image from 'next/image'
+
+// This is sample data.
 const data = {
-  user: {
-    name: "Saceite",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
   navMain: [
     {
-      title: "Automatico",
-      url: "/dashboard/automatic",
-      icon: IconDashboard,
+      title: "Filtrar",
+      url: "#",
+      icon: SquareTerminal,
+      isActive: true,
+      items: [
+        {
+          title: "Actividades",
+          url: "#",
+        },
+        {
+          title: "Pendientes",
+          url: "#",
+        },
+        {
+          title: "Otros",
+          url: "#",
+        },
+      ],
     },
   ],
-  documents: [
+  projects: [
     {
-      name: "Filtrar actividades",
-      url: "#",
-      icon: IconDatabase,
+      name: "Sistema automatico",
+      url: "/dashboard/automatic",
+      icon: Frame,
     },
     {
-      name: "Historico",
+      name: "Analisis estadistico",
       url: "#",
-      icon: IconReport,
+      icon: PieChart,
     },
   ],
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
+
+
     <Sidebar collapsible="offcanvas" {...props}>
       <SidebarHeader>
-        <SidebarMenu>
-          <SidebarMenuItem>
-            <SidebarMenuButton
-              asChild
-              className="data-[slot=sidebar-menu-button]:!p-1.5"
-            >
-              <a href="#">
-                <IconInnerShadowTop className="!size-5" />
-                <span className="text-base font-semibold">SACEITES</span>
-              </a>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-        </SidebarMenu>
+        <Image
+          src="/2.jpg"
+          width={400}
+          height={600}
+          alt="Picture of the author"
+        />
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavDocuments items={data.documents} />
-        {/* <NavSecondary items={data.navSecondary} className="mt-auto" /> */}
+        <NavProjects projects={data.projects} />
       </SidebarContent>
       <SidebarFooter>
-        FOOTER
+        <p>FOOTER</p>
       </SidebarFooter>
+      <SidebarRail />
     </Sidebar>
+
   )
 }

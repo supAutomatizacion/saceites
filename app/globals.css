@@ -44,6 +44,9 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
+  --color-saceites-1: var(--saceites-1);
+  --color-saceites-2: var(--saceites-2);
+  --color-saceites-3: var(--saceites-3);
 }
 
 :root {
@@ -79,6 +82,9 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --saceites-1: oklch(0.90 0.19 96);
+  --saceites-2: oklch(0.73 0.25 55);
+  --saceites-3: oklch(0.82 0.21 75);
 }
 
 .dark {

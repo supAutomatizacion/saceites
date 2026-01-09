@@ -56,8 +56,8 @@ export function CarouselPlugin() {
                         <div className="flex flex-row gap-4 w-full h-full p-1">
                             <Card className="h-full flex-1">
                                 <CardContent className="grid grid-cols-2 grid-rows-2 gap-2 justify-center h-full">
-                                    <Avatar>
-                                        <AvatarImage src="https://github.com/shadcn.png" />
+                                    <Avatar className="size-50">
+                                        <AvatarImage src="/sebastian.jpeg" />
                                         <AvatarFallback>CN</AvatarFallback>
                                     </Avatar>
                                     <span className="text-4xl font-semibold">{index + 1} - AA</span>
@@ -68,7 +68,10 @@ export function CarouselPlugin() {
                             </Card>
                             <Card className="h-full flex-1">
                                 <CardContent className="grid grid-cols-2 grid-rows-2 gap-2 justify-center h-full">
-                                    <span className="text-4xl font-semibold">{index + 1} - A</span>
+                                    <Avatar className="size-50">
+                                        <AvatarImage src="/sergio.jpeg" />
+                                        <AvatarFallback>CN</AvatarFallback>
+                                    </Avatar>
                                     <span className="text-4xl font-semibold">{index + 1} - AA</span>
                                     <div className="col-span-2">
                                         <DataTable columns={columns} data={data} />
