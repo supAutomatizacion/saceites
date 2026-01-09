@@ -1,12 +1,10 @@
-
+import { CarouselPlugin } from "@/components/carrouselTest";
 
 export default function Page() {
   return (
     <div>
       <main >
-        <div>
-          PAGINA DE ESTADISTICAS
-        </div>
+          <CarouselPlugin/>
       </main>
     </div>
   );

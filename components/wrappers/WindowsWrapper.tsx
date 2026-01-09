@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 
-const PAGES = ["/champion", "/stadistics", "/workers", "/test"];
+const PAGES = ["/dashboard/automatic/workers", "/dashboard/automatic/champion", "/dashboard/automatic/stadistics"];
 const ROTATE_SECONDS = 10;
 
 export default function WindowsWrapper() {
