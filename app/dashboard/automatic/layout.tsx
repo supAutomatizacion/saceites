@@ -1,6 +1,4 @@
 
-import HeaderComponent from "@/components/headerComponent";
-import WindowsWrapper from "@/components/wrappers/WindowsWrapper"
 
 export default function RootLayout({
     children,
