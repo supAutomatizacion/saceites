@@ -3,147 +3,113 @@
 import * as React from "react"
 import Autoplay from "embla-carousel-autoplay"
 
-import { Card, CardContent } from "@/components/ui/card"
 import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
+  Carousel,
+  CarouselContent,
+  CarouselItem,
 } from "@/components/ui/carousel"
 
-import {
-    AudioLines,
-    Smartphone,
-} from "lucide-react"
-
-import { DataTable } from "@/components/table/data-table"
-import { columns } from "@/components/table/workers-columns"
-
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Card } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
+import { DataTable } from "@/components/table/data-table"
 
+import { AudioLines, Smartphone } from "lucide-react"
 import Image from "next/image"
 
-const data = [
-    {
-        name: "Actividad de prueba #1",
-        status: "Completada",
-        date: "08/01/2026",
-    },
-    {
-        name: "Actividad de prueba #2",
-        status: "Completada",
-        date: "08/01/2026",
-    },
-    {
-        name: "Actividad de prueba #3",
-        status: "Pendiente",
-        date: "08/01/2026",
-    },
-    {
-        name: "Actividad de prueba #4",
-        status: "Pendiente",
-        date: "08/01/2026",
-    },
-]
+import { columns } from "@/components/table/columns"
+import { Task } from "@/types/table/schema"
+import { Worker } from "@/types/workers/schema"
 
-export function CarouselPlugin() {
-    const plugin = React.useRef(
-        Autoplay({ delay: 2000, stopOnInteraction: true })
-    )
+type WorkersProps = {
+  tasks: Task[]
+  workers: Worker[]
+}
 
-    return (
-        <Carousel
-            // plugins={[plugin.current]}
-            className="w-full h-full"
-            onMouseEnter={plugin.current.stop}
-            onMouseLeave={plugin.current.reset}
-        >
-            <CarouselContent className="h-full">
-                {Array.from({ length: 5 }).map((_, index) => (
-                    <CarouselItem key={index} className="h-full">
-                        <div className="flex flex-row gap-4 w-full h-full p-1">
-                            <div className="h-full flex-1 shadow-xl p-2">
-                                <div className="grid grid-cols-2 grid-rows-2 gap-2 justify-center h-full shadow-2xl">
-                                    <div className="relative w-[160px] h-[160px]">
-                                        <Image
-                                            src="/sebastian.jpeg"
-                                            fill
-                                            sizes="200px"
-                                            alt="Picture of the author"
-                                            className="rounded-lg"
-                                        />
-                                    </div>
+/* Utilidad para agrupar de a 2 */
+function chunkArray<T>(array: T[], size: number): T[][] {
+  const chunks: T[][] = []
+  for (let i = 0; i < array.length; i += size) {
+    chunks.push(array.slice(i, i + size))
+  }
+  return chunks
+}
 
-                                    <div className="flex flex-col gap-10 justify-center">
-                                        <div className="flex flex-col gap-2 justify-end">
-                                            <div className="bg-saceites-2">
-                                                Joanh Sebastian
-                                            </div>
-                                            <div>
-                                                Especialista en electricidad
-                                            </div>
-                                            <div className="flex gap-4">
-                                                <AudioLines />
-                                                <p>MTTO 3</p>
-                                            </div>
-                                            <div className="flex gap-4">
-                                                <Smartphone />
-                                                <p> 312 514 38 36</p>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <p>progreso</p>
-                                            <Progress value={33} />
-                                        </div>
-                                    </div>
-                                    <Card className="col-span-2 border-none mx-3 shadow-none">
-                                        <DataTable columns={columns} data={data} />
-                                    </Card>
-                                </div>
-                            </div>
-                            <div className="h-full flex-1 shadow-xl p-2">
-                                <div className="grid grid-cols-2 grid-rows-2 gap-2 justify-center h-full shadow-2xl">
-                                    <div className="relative w-[160px] h-[160px] shadow-2xl">
-                                        <Image
-                                            src="/sergio.jpeg"
-                                            fill
-                                            sizes="200px"
-                                            alt="Picture of the author"
-                                            className="rounded-lg"
-                                        />
-                                    </div>
+export default function CarouselPlugin({ tasks, workers }: WorkersProps) {
+  const plugin = React.useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: true })
+  )
 
-                                    <div className="flex flex-col gap-10 justify-center">
-                                        <div className="flex flex-col gap-2 justify-end">
-                                            <div className="bg-saceites-2">
-                                                Sergio Pancho
-                                            </div>
-                                            <div>
-                                                Especialista en regriferacion
-                                            </div>
-                                            <div className="flex gap-4">
-                                                <AudioLines />
-                                                <p>MTTO 4</p>
-                                            </div>
-                                            <div className="flex gap-4">
-                                                <Smartphone />
-                                                <p> 312 514 38 36</p>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <p>progreso</p>
-                                            <Progress value={33} />
-                                        </div>
-                                    </div>
-                                    <Card className="col-span-2 border-none mx-3 shadow-none">
-                                        <DataTable columns={columns} data={data} />
-                                    </Card>
-                                </div>
-                            </div>
+  const workerPairs = chunkArray(workers, 2)
+
+  return (
+    <Carousel
+      plugins={[plugin.current]}
+      className="w-full h-full"
+      onMouseEnter={plugin.current.stop}
+      onMouseLeave={plugin.current.reset}
+    >
+      <CarouselContent>
+        {workerPairs.map((pair, index) => (
+          <CarouselItem key={index} className="p-0 m-0">
+            {/* CONTENEDOR DE DOS TARJETAS */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 h-full">
+              {pair.map((worker) => (
+                <Card
+                  key={worker.id}
+                  className="flex flex-col h-full p-4 shadow-xl"
+                >
+                  {/* HEADER: FOTO + INFO */}
+                  <div className="grid grid-cols-[160px_1fr] gap-4 mb-4">
+                    {/* Foto */}
+                    <div className="relative w-[160px] h-[160px]">
+                      <Image
+                        src="/user-placeholder.png"
+                        fill
+                        sizes="160px"
+                        alt={worker.nombre}
+                        className="rounded-lg object-cover"
+                      />
+                    </div>
+
+                    {/* Información */}
+                    <div className="flex flex-col justify-between">
+                      <div className="space-y-1">
+                        <h3 className="text-lg font-semibold">
+                          {worker.nombre}
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                          {worker.rango}
+                        </p>
+
+                        <div className="flex items-center gap-2 text-sm">
+                          <AudioLines size={16} />
+                          <span>{worker.radio}</span>
                         </div>
-                    </CarouselItem>
-                ))}
-            </CarouselContent>
-        </Carousel>
-    )
+
+                        <div className="flex items-center gap-2 text-sm">
+                          <Smartphone size={16} />
+                          <span>{worker.telefono}</span>
+                        </div>
+                      </div>
+
+                      {/* Progreso */}
+                      <div>
+                        <p className="text-xs mb-1">Progreso</p>
+                        <Progress value={33} />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* TABLA – OCUPA TODO EL ANCHO */}
+                  <div className="mt-auto w-full">
+                    <DataTable data={tasks} columns={columns} />
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+    </Carousel>
+  )
 }
