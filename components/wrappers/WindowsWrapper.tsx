@@ -1,29 +1,36 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 
-const PAGES = ["/dashboard/automatic/workers", "/dashboard/automatic/champion", "/dashboard/automatic/stadistics"];
-const ROTATE_SECONDS = 10;
+const PAGES = [
+  "/dashboard/automatic/workers",
+  "/dashboard/automatic/champion",
+  "/dashboard/automatic/stadistics",
+];
 
 export default function WindowsWrapper() {
   const router = useRouter();
   const pathname = usePathname();
-  const [index, setIndex] = useState(0);
+
+  const BASE = "/dashboard/automatic";
 
   useEffect(() => {
-    const id = setInterval(() => {
-      setIndex((prev) => (prev + 1) % PAGES.length);
-    }, ROTATE_SECONDS * 1000);
-
-    return () => clearInterval(id);
-  }, []);
-
-  useEffect(() => {
-    if (pathname !== PAGES[index]) {
-      router.replace(PAGES[index]);
+    if (pathname === BASE) {
+      router.replace(PAGES[0]);
     }
-  }, [index, pathname, router]);
+  }, [pathname, router]);
+
+  useEffect(() => {
+    const handler = () => {
+      const currentIndex = PAGES.indexOf(pathname);
+      const nextIndex = (currentIndex + 1) % PAGES.length;
+      router.replace(PAGES[nextIndex]);
+    };
+
+    window.addEventListener("dashboard:next", handler);
+    return () => window.removeEventListener("dashboard:next", handler);
+  }, [pathname, router]);
 
   return null;
 }

@@ -1,18 +1,22 @@
-import  CarouselPlugin  from "@/components/carrouselTest";
-import { getTasks } from "@/lib/call-task";
-import { getWorkwers } from "@/lib/call-worker";
+"use client"
 
+import { useEffect } from "react";
 
-export default async function Page() {
-  const tasks = await getTasks();
-  const workers = await getWorkwers();
+export default function Workers() {
 
-  return (
-    <div>
-      <main >
-          <CarouselPlugin tasks={tasks} workers={workers}/>
-      </main>
-    </div>
-  );
+  const SLIDE_TIME = 4000;
+  const SLIDES = Math.ceil(8 / 2);
+
+  useEffect(() => {
+    const totalTime = SLIDE_TIME * SLIDES;
+
+    const id = setTimeout(() => {
+      window.dispatchEvent(new Event("dashboard:next"));
+    }, totalTime);
+
+    return () => clearTimeout(id);
+  }, [8]);
+
+  return null;
 
 }

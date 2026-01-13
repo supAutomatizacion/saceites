@@ -1,14 +1,21 @@
-import FrequencyTrendChart from '@/components/plotly/Tendency';
-import { FrecuencyCilindersData } from '@/utils/generatedata'
+"use client"
 
-export default function Page() {
-  return (
-    <div>
-      <main >
-        <div className="flex justify-center text-center h-full w-full">
-            <FrequencyTrendChart {...FrecuencyCilindersData} />
-        </div>
-      </main>
-    </div>
-  );
+import { useEffect } from "react";
+
+export default function Workers() {
+
+  const SLIDE_TIME = 10000;
+
+  useEffect(() => {
+    const totalTime = SLIDE_TIME;
+
+    const id = setTimeout(() => {
+      window.dispatchEvent(new Event("dashboard:next"));
+    }, totalTime);
+
+    return () => clearTimeout(id);
+  }, [8]);
+
+  return null;
+
 }

@@ -1,13 +1,21 @@
+"use client"
 
+import { useEffect } from "react";
 
-export default function Page() {
-  return (
-    <div>
-      <main >
-        <div className="flex justify-center text-center h-full w-full">
-          PAGINA DE LOS DOS MEJORES DESDE SUBCARPETA DE DASHBOARD
-        </div>
-      </main>
-    </div>
-  );
+export default function Champion() {
+
+  const SLIDE_TIME = 5000;
+
+  useEffect(() => {
+    const totalTime = SLIDE_TIME;
+
+    const id = setTimeout(() => {
+      window.dispatchEvent(new Event("dashboard:next"));
+    }, totalTime);
+
+    return () => clearTimeout(id);
+  }, [8]);
+
+  return null;
+
 }

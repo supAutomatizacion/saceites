@@ -25,8 +25,6 @@ import {
   TableRow,
 } from "@/components/ui/table"
 
-import { DataTablePagination } from "@/components/table/data-table-pagination"
-import { DataTableToolbar } from "@/components/table/data-table-toolbar"
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -75,9 +73,9 @@ export function DataTable<TData, TValue>({
   return (
     <div className="flex flex-col gap-4">
       {/* <DataTableToolbar table={table} /> */}
-      <div className="overflow-hidden rounded-md border">
+      <div className="overflow-hidden rounded-md border-none rounded-none">
         <Table>
-          <TableHeader>
+          <TableHeader className="bg-saceites-1">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
@@ -125,7 +123,7 @@ export function DataTable<TData, TValue>({
           </TableBody>
         </Table>
       </div>
-      <DataTablePagination table={table} />
+      {/* <DataTablePagination table={table} /> */}
     </div>
   )
 }

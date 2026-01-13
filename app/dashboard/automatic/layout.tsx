@@ -1,3 +1,4 @@
+import WindowsWrapper from "@/components/wrappers/WindowsWrapper";
 
 
 export default function RootLayout({
@@ -7,7 +8,7 @@ export default function RootLayout({
 }>) {
     return (
         <div>
-            {/* <WindowsWrapper /> */}
+            <WindowsWrapper />
             {children}
         </div>
     );

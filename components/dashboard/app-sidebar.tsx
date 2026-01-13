@@ -65,8 +65,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarHeader>
         <Image
           src="/1.png"
-          width={400}
-          height={600}
+          width={200}
+          height={200}
           alt="Picture of the author"
         />
       </SidebarHeader>
@@ -77,7 +77,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarFooter>
         <p>FOOTER</p>
       </SidebarFooter>
-      <SidebarRail />
     </Sidebar>
 
   )

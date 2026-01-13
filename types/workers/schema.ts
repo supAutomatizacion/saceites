@@ -8,6 +8,7 @@ export const workerSchema = z.object({
   rango: z.string(),
   radio: z.string(),
   telefono: z.string(),
+  image: z.string(),
 })
 
 export type Worker = z.infer<typeof workerSchema>
