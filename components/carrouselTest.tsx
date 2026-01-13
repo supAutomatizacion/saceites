@@ -44,8 +44,8 @@ export default function CarouselPlugin({ tasks, workers }: WorkersProps) {
     <Carousel
       plugins={[plugin.current]}
       className="w-full h-full"
-      onMouseEnter={plugin.current.stop}
-      onMouseLeave={plugin.current.reset}
+      // onMouseEnter={plugin.current.stop}
+      // onMouseLeave={plugin.current.reset}
     >
       <CarouselContent>
         {workerPairs.map((pair, index) => (
