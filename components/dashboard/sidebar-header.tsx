@@ -1,11 +1,11 @@
 'use client'
 
-import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Calendar, Activity, RefreshCw } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import {useEffect, useState} from "react"
+import { ModeToggle } from "@/components/theme-toggle"
 
 interface HeaderComponentProps {
     totalActividades? : number,
@@ -74,6 +74,9 @@ export function SiteHeader({ totalActividades = 0, ultimaActualizacion = null }:
                                     {totalActividades}
                                 </Badge>
                             </div>
+                        </div>
+                        <div>
+                            <ModeToggle />
                         </div>
 
                         {/* Última Actualización */}

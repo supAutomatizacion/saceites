@@ -1,74 +1,74 @@
 [
   {
     "id": "w-001",
-    "nombre": "Juan Pérez",
-    "rango": "Especialista Electrico",
-    "radio": "MTTO-01",
+    "nombre": "Diego Meneses",
+    "rango": "Especialista Electromecanico",
+    "radio": "MTTO-02",
     "telefono": "3125143836",
     "image": "/diego.jpeg"
   },
   {
     "id": "w-002",
-    "nombre": "Carlos Gómez",
-    "rango": "Especialista refrigeracion",
+    "nombre": "Sneyder Moreno",
+    "rango": "Tecnico Electricista",
     "radio": "MTTO-02",
     "telefono": "3104587291",
     "image": "/sneider.jpeg"
   },
   {
     "id": "w-007",
-    "nombre": "Tecnico electromecanico",
-    "rango": "Instrumentista",
+    "nombre": "Harold NN",
+    "rango": "Especialista Electromecanico",
     "radio": "MTTO-07",
     "telefono": "3187654321",
     "image": "/harol.jpeg"
   },
   {
     "id": "w-008",
-    "nombre": "Jorge Ramírez",
-    "rango": "Técnico Mecatrónico",
+    "nombre": "Sebastian Gonzales",
+    "rango": "Tecnico Electricista",
     "radio": "MTTO-08",
     "telefono": "3192345678",
     "image": "/sebastian.jpeg"
   },
   {
     "id": "w-009",
-    "nombre": "Ricardo Morales",
-    "rango": "Técnico Eléctrico",
+    "nombre": "Sergio Jaimes",
+    "rango": "Especialista en refrigeracion",
     "radio": "MTTO-09",
     "telefono": "3178901234",
     "image": "/sergio.jpeg"
   },
   {
-    "id": "w-003",
-    "nombre": "Tecnico electromecanico",
-    "rango": "Electricista",
-    "radio": "MTTO-03",
-    "telefono": "3156678421",
+    "id": "w-001",
+    "nombre": "Diego Meneses",
+    "rango": "Especialista Electromecanico",
+    "radio": "MTTO-02",
+    "telefono": "3125143836",
     "image": "/diego.jpeg"
   },
   {
     "id": "w-004",
-    "nombre": "Tecnico electricista",
-    "rango": "Mecánico",
-    "radio": "MTTO-04",
-    "telefono": "3009876543",
+    "nombre": "Hader Cabrera",
+    "rango": "Supervisor de Automatizacion",
+    "radio": "N/A",
+    "telefono": "3125143834",
     "image": "/hader.jpeg"
   },
   {
-    "id": "w-005",
-    "nombre": "Sebastián López",
-    "rango": "Especialista en soldadura",
-    "radio": "MTTO-05",
-    "telefono": "3014567890",
+    "id": "w-009",
+    "nombre": "Sergio Jaimes",
+    "rango": "Especialista en refrigeracion",
+    "radio": "MTTO-09",
+    "telefono": "3178901234",
     "image": "/sergio.jpeg"
   },
   {
-    "id": "w-006",
-    "nombre": "Miguel Torres",
-    "rango": "Supervisor de Automatizacion",
-    "radio": "MTTO-06",
-    "telefono": "3201234567",
+    "id": "w-007",
+    "nombre": "Harold NN",
+    "rango": "Especialista Electromecanico",
+    "radio": "MTTO-07",
+    "telefono": "3187654321",
     "image": "/harol.jpeg"
   },
   {
@@ -77,6 +77,14 @@
     "rango": "Supervisor general",
     "radio": "MTTO-10",
     "telefono": "3146789012",
+    "image": "/sneider.jpeg"
+  },
+  {
+    "id": "w-002",
+    "nombre": "Sneyder Moreno",
+    "rango": "Tecnico Electricista",
+    "radio": "MTTO-02",
+    "telefono": "3104587291",
     "image": "/sneider.jpeg"
   }
 ]
