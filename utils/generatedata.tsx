@@ -222,10 +222,10 @@ const PowerData = {
 
 const FrecuencyCilindersData = {
     minPF: 30,
-    maxPF: 65,
+    maxPF: 100,
     traces : data,
-    tittle: 'Grafica de frecuencias',
-    yAxisTitle: 'Frecuencia [Hz]',
+    tittle: 'Tendencia de eficiencia',
+    yAxisTitle: 'Porcentaje [%]',
 }
 
 const EnergyPowerData = {

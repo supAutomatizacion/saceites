@@ -1,8 +1,9 @@
-import { CarouselPlugin } from "@/components/carrouselTest";
+import  CarouselPlugin  from "@/components/carrouselTest";
 
 export default function Page() {
     return (
-        <CarouselPlugin />
+        // <CarouselPlugin />
+        null
     )
 }
 
