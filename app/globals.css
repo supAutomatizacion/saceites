@@ -47,6 +47,7 @@
   --color-saceites-1: var(--saceites-1);
   --color-saceites-2: var(--saceites-2);
   --color-saceites-3: var(--saceites-3);
+  --header-height: calc(var(--spacing) * 12);
 }
 
 :root {
