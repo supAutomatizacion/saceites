@@ -11,7 +11,7 @@ import {
   getSortedRowModel,
   useReactTable,
   type ColumnDef,
-  type ColumnFiltersState,
+  ColumnFiltersState,
   type SortingState,
   type VisibilityState,
 } from "@tanstack/react-table"
@@ -25,22 +25,31 @@ import {
   TableRow,
 } from "@/components/ui/table"
 
+import { Input } from "@/components/ui/input"
+import { DataTablePagination } from "./data-table-pagination"
+import { GlowEffect } from "../ui/glow-effect"
+
+type filterProp = {
+  exist: Boolean,
+  palabra: string
+}
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
   data: TData[]
+  filter: filterProp
+  pagination?: Boolean
 }
 
 export function DataTable<TData, TValue>({
   columns,
   data,
+  filter,
+  pagination,
 }: DataTableProps<TData, TValue>) {
   const [rowSelection, setRowSelection] = React.useState({})
-  const [columnVisibility, setColumnVisibility] =
-    React.useState<VisibilityState>({})
-  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
-    []
-  )
+  const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({})
+  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([])
   const [sorting, setSorting] = React.useState<SortingState>([])
 
   const table = useReactTable({
@@ -54,7 +63,7 @@ export function DataTable<TData, TValue>({
     },
     initialState: {
       pagination: {
-        pageSize: 25,
+        pageSize: 10,
       },
     },
     enableRowSelection: true,
@@ -74,6 +83,27 @@ export function DataTable<TData, TValue>({
     <div className="flex flex-col gap-4">
       {/* <DataTableToolbar table={table} /> */}
       <div className="overflow-hidden rounded-md border-none rounded-none">
+
+        {filter.exist &&
+          <div className="relative inline-block my-5 px-2">
+            <GlowEffect
+              colors={['#FF5733', '#FFDE00', '#FF7500', '#FFB309']}
+              mode='rotate'
+              blur='soft'
+              duration={3}
+              scale={0.9}
+            />
+            <Input
+              placeholder={`filtrar por ${filter.palabra}`}
+              value={(table.getColumn(filter.palabra)?.getFilterValue() as string) ?? ""}
+              onChange={(event) =>
+                table.getColumn(filter.palabra)?.setFilterValue(event.target.value)
+              }
+              className="relative z-10 max-w-sm bg-white dark:bg-muted rounded-none"
+            />
+          </div>
+        }
+
         <Table>
           <TableHeader className="bg-saceites-1">
             {table.getHeaderGroups().map((headerGroup) => (
@@ -84,9 +114,9 @@ export function DataTable<TData, TValue>({
                       {header.isPlaceholder
                         ? null
                         : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext()
-                          )}
+                          header.column.columnDef.header,
+                          header.getContext()
+                        )}
                     </TableHead>
                   )
                 })}
@@ -123,7 +153,7 @@ export function DataTable<TData, TValue>({
           </TableBody>
         </Table>
       </div>
-      {/* <DataTablePagination table={table} /> */}
+      {pagination && <DataTablePagination table={table} />}
     </div>
   )
 }

@@ -4,12 +4,12 @@ import { Separator } from "@/components/ui/separator"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 import { Calendar, Activity, RefreshCw } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
-import {useEffect, useState} from "react"
+import { useEffect, useState } from "react"
 import { ModeToggle } from "@/components/theme-toggle"
 
 interface HeaderComponentProps {
-    totalActividades? : number,
-    ultimaActualizacion? : Date | null
+    totalActividades?: number,
+    ultimaActualizacion?: Date | null
 }
 
 export function SiteHeader({ totalActividades = 0, ultimaActualizacion = null }: HeaderComponentProps) {
@@ -45,15 +45,7 @@ export function SiteHeader({ totalActividades = 0, ultimaActualizacion = null }:
                     orientation="vertical"
                     className="mx-2 data-[orientation=vertical]:h-4"
                 />
-                <div className="flex flex-1 items-center justify-between gap-4">
-                    {/* Logo SACEITES */}
-                    <div className="flex items-center gap-2">
-                        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-                            <span className="text-xs font-bold text-primary-foreground">SA</span>
-                        </div>
-                        <span className="text-base font-semibold tracking-tight">SACEITES</span>
-                    </div>
-
+                <div className="flex flex-1 items-center justify-end gap-4">
                     {/* Información del Header */}
                     <div className="flex items-center gap-3 md:gap-5">
                         {/* Fecha Actual / MTTO */}
@@ -75,10 +67,6 @@ export function SiteHeader({ totalActividades = 0, ultimaActualizacion = null }:
                                 </Badge>
                             </div>
                         </div>
-                        <div>
-                            <ModeToggle />
-                        </div>
-
                         {/* Última Actualización */}
                         <div className="flex items-center gap-1.5">
                             <RefreshCw className="h-4 w-4 text-muted-foreground" />
@@ -86,6 +74,9 @@ export function SiteHeader({ totalActividades = 0, ultimaActualizacion = null }:
                                 <span className="text-[10px] text-muted-foreground">Últ. Actualización</span>
                                 <span className="text-xs font-medium">{formatearUltimaActualizacion(ultimaActualizacion)}</span>
                             </div>
+                        </div>
+                        <div>
+                            <ModeToggle />
                         </div>
                     </div>
                 </div>

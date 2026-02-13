@@ -7,8 +7,8 @@ import {
   SquareTerminal,
 } from "lucide-react"
 
-import { NavMain } from "@/components/dashboard/nav-main"
-import { NavProjects } from "@/components/dashboard/nav-projects"
+import { NavMain } from "@/components/navigation/nav-main"
+import { NavProjects } from "@/components/navigation/nav-projects"
 import {
   Sidebar,
   SidebarContent,
@@ -30,15 +30,15 @@ const data = {
       items: [
         {
           title: "Actividades",
-          url: "#",
+          url: "/dashboard/search/id",
         },
         {
           title: "Pendientes",
-          url: "#",
+          url: "/dashboard/search/title",
         },
         {
           title: "Otros",
-          url: "#",
+          url: "/dashboard/search/status",
         },
       ],
     },
@@ -51,7 +51,7 @@ const data = {
     },
     {
       name: "Analisis estadistico",
-      url: "#",
+      url: "/dashboard/powerbi",
       icon: PieChart,
     },
   ],

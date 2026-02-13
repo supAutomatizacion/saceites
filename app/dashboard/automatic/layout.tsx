@@ -7,8 +7,8 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <div>
-            {/* <WindowsWrapper /> */}
+        <div className="px-3">
+            <WindowsWrapper />
             {children}
         </div>
     );

@@ -10,7 +10,7 @@ export default function Stadistics({
 }>) {
 
     return (
-        <div className="p-8 h-[calc(100vh-100px)]">
+        <div className="h-[calc(100vh-100px)]">
             {/* Contenido adicional debajo del grid */}
             <div className="grid grid-cols-2 grid-rows-[1fr_1fr] gap-4 h-full">
                 <div className="">

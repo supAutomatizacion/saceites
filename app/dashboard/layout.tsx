@@ -2,9 +2,9 @@
 
 import type React from "react"
 
-import { AppSidebar } from "@/components/dashboard/app-sidebar"
+import { AppSidebar } from "@/components/navigation/app-sidebar"
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
-import { SiteHeader } from "@/components/dashboard/sidebar-header"
+import { SiteHeader } from "@/components/navigation/sidebar-header"
 
 export default function DashboardLayout({
   children,
@@ -24,7 +24,7 @@ export default function DashboardLayout({
       <SidebarInset>
         <SiteHeader />
         <div className="flex flex-1 flex-col">
-          <div className="@container/main flex flex-1 flex-col gap-2">
+          <div className="@container/main flex flex-1 flex-col">
             {children}
           </div>
         </div>

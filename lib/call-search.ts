@@ -4,10 +4,10 @@ import { promises as fs } from "fs"
 import path from "path"
 import { taskSchema } from "@/types/table/schema"
 
-export async function getTasks() {
+export async function getSearchtasks() {
   const filePath = path.join(
     process.cwd(),
-    "data/table/tasks.json"
+    "data/filtros/tasks.json"
   )
 
   const data = await fs.readFile(filePath, "utf-8")

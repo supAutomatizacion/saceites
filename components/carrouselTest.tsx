@@ -105,10 +105,11 @@ export default function CarouselPlugin({ tasks, workers }: WorkersProps) {
                     </div>
                   </div>
 
-                  {/* TABLA FUERA DEL CARD (FULL WIDTH, SIN ESTILOS) */}
                   <div className="w-full">
-                    <DataTable data={tasks} columns={columns} />
+                    <DataTable data={tasks} columns={columns} 
+                    filter={{exist : false, palabra : 'null'}} />
                   </div>
+                  
                 </div>
               ))}
             </div>

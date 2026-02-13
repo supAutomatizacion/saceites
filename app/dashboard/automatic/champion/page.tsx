@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 export default function Champion() {
 
-  const SLIDE_TIME = 5000;
+  const SLIDE_TIME = 15000;
 
   useEffect(() => {
     const totalTime = SLIDE_TIME;
