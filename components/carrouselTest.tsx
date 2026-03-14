@@ -12,7 +12,7 @@ import {
 import { Progress } from "@/components/ui/progress"
 import { DataTable } from "@/components/table/data-table"
 
-import { AudioLines, Smartphone } from "lucide-react"
+import { AudioLines, Smartphone, CircleUserRound } from "lucide-react"
 import Image from "next/image"
 
 import { columns } from "@/components/table/columns"
@@ -57,26 +57,11 @@ export default function CarouselPlugin({ tasks, workers }: WorkersProps) {
                 <div key={worker.id} className="flex flex-col h-full gap-2">
 
                   {/* CARD SOLO PARA INFO */}
-                  <div className="p-6 w-[450px] mx-auto shadow-xl mb-2">
+                  <div className="p-6 mx-auto shadow-xl mb-2">
                     <div className="grid grid-cols-[120px_1fr] gap-4">
                       {/* Foto */}
-
                       <div className="relative inline-block my-5 px-2">
-                        <GlowEffect
-                          colors={['#FF5733', '#FFDE00', '#FF7500', '#FFB309']}
-                          mode='breathe'
-                          blur='soft'
-                          duration={3}
-                          scale={1}
-                        />
-                        <Image
-                          src={worker.image}
-                          width={200}
-                          
-                          height={200}
-                          alt={worker.nombre}
-                          className="rounded-full object-cover"
-                        />
+                      <CircleUserRound className="h-12 w-12" size={200}/>
                       </div>
                       {/* Información */}
                       <div className="flex flex-col justify-center">

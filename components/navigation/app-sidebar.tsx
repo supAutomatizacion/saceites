@@ -68,6 +68,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           width={200}
           height={200}
           alt="Picture of the author"
+          loading="eager"
         />
       </SidebarHeader>
       <SidebarContent>
