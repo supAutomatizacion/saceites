@@ -134,18 +134,18 @@ export const SHIFT_CONFIG: Record<ShiftType, ShiftInfo> = {
 }
 
 export const WORKERS: Worker[] = [
-  { id: "1", name: "Ana García", role: "Operador" },
-  { id: "2", name: "Carlos López", role: "Operador" },
-  { id: "3", name: "María Rodríguez", role: "Operador" },
-  { id: "4", name: "Juan Martínez", role: "Operador" },
-  { id: "5", name: "Laura Sánchez", role: "Operador" },
-  { id: "6", name: "Pedro Fernández", role: "Operador" },
-  { id: "7", name: "Sofia Díaz", role: "Operador" },
-  { id: "8", name: "Diego Torres", role: "Operador" },
-  { id: "9", name: "Elena Ruiz", role: "Operador" },
-  { id: "10", name: "Andrés Moreno", role: "Operador" },
-  { id: "11", name: "Lucía Jiménez", role: "Operador" },
-  { id: "12", name: "Roberto Herrera", role: "Operador" },
+  { id: "1", name: "Diego Meneses", role: "Operador" },
+  { id: "2", name: "Camilo Rodriguez", role: "Operador" },
+  { id: "3", name: "Sebastian Gonzales", role: "Operador" },
+  { id: "4", name: "Sergio Jaimes", role: "Operador" },
+  { id: "5", name: "Sebastian Garcia", role: "Operador" },
+  { id: "6", name: "Jesus Daniel", role: "Operador" },
+  { id: "7", name: "Jeison Cadena", role: "Operador" },
+  { id: "8", name: "Juan Valencia", role: "Operador" },
+  { id: "9", name: "Sneider Moreno", role: "Operador" },
+  { id: "10", name: "Harold Castañeda", role: "Operador" },
+  { id: "11", name: "Luis Hernandez", role: "Operador" },
+  { id: "12", name: "Hader Cabrera", role: "Operador" },
   { id: "13", name: "Carmen Vargas", role: "Operador" },
 ]
 
