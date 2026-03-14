@@ -6,6 +6,15 @@ import { Calendar, Activity, RefreshCw } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { useEffect, useState } from "react"
 import { ModeToggle } from "@/components/theme-toggle"
+import {
+    Select,
+    SelectContent,
+    SelectGroup,
+    SelectItem,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select"
+import { GlowEffect } from "@/components/ui/glow-effect"
 
 interface HeaderComponentProps {
     totalActividades?: number,
@@ -45,6 +54,20 @@ export function SiteHeader({ totalActividades = 0, ultimaActualizacion = null }:
                     orientation="vertical"
                     className="mx-2 data-[orientation=vertical]:h-4"
                 />
+
+                <Select defaultValue="uno" >
+                    <SelectTrigger className="relative z-10 w-[180px] rounded-xm m-0 p-2 bg-white dark:bg-muted">
+                        <SelectValue placeholder="Turno" />
+                    </SelectTrigger>
+                    <SelectContent>
+                        <SelectGroup>
+                            <SelectItem value="uno">Turno mañana</SelectItem>
+                            <SelectItem value="dos">Turno tarde</SelectItem>
+                            <SelectItem value="tres">Turno noche</SelectItem>
+                        </SelectGroup>
+                    </SelectContent>
+                </Select>
+
                 <div className="flex flex-1 items-center justify-end gap-4">
                     {/* Información del Header */}
                     <div className="flex items-center gap-3 md:gap-5">

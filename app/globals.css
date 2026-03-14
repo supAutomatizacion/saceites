@@ -86,6 +86,12 @@
   --saceites-1: oklch(0.90 0.19 96);
   --saceites-2: oklch(0.73 0.25 55);
   --saceites-3: oklch(0.82 0.21 75);
+
+    /* Custom shift colors */
+  --shift-morning: oklch(0.72 0.15 160);
+  --shift-afternoon: oklch(0.65 0.18 250);
+  --shift-night: oklch(0.70 0.20 40);
+  --shift-off: oklch(0.40 0 0);
 }
 
 .dark {

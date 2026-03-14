@@ -5,6 +5,7 @@ import {
   Frame,
   PieChart,
   SquareTerminal,
+  CalendarCheck2,
 } from "lucide-react"
 
 import { NavMain } from "@/components/navigation/nav-main"
@@ -53,6 +54,11 @@ const data = {
       name: "Analisis estadistico",
       url: "/dashboard/powerbi",
       icon: PieChart,
+    },
+    {
+      name: "Gestion de horarios",
+      url: "/dashboard/horario",
+      icon: CalendarCheck2,
     },
   ],
 }
