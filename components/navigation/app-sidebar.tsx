@@ -43,6 +43,22 @@ const data = {
         },
       ],
     },
+    {
+      title: "Estato fechadoras",
+      url: "#",
+      icon: SquareTerminal,
+      isActive: true,
+      items: [
+        {
+          title: "Liquidos",
+          url: "/dashboard/fechadoras/margarinas",
+        },
+        {
+          title: "Margarinas",
+          url: "/dashboard/fechadoras/liquidos",
+        },
+      ],
+    },
   ],
   projects: [
     {
