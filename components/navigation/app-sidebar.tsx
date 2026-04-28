@@ -6,6 +6,7 @@ import {
   PieChart,
   SquareTerminal,
   CalendarCheck2,
+  Stamp
 } from "lucide-react"
 
 import { NavMain } from "@/components/navigation/nav-main"
@@ -40,6 +41,22 @@ const data = {
         {
           title: "Otros",
           url: "/dashboard/search/status",
+        },
+      ],
+    },
+    {
+      title: "Fechadoras",
+      url: "#",
+      icon: Stamp,
+      isActive: true,
+      items: [
+        {
+          title: "Estado de fechadoras",
+          url: "/dashboard/fechadoras",
+        },
+        {
+          title: "Registro de fallos",
+          url: "#",
         },
       ],
     },
