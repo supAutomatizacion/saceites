@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "components/canva/fechadora.jsx"  ],
   "exclude": ["node_modules"]
 }

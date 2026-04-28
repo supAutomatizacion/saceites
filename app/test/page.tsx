@@ -1,4 +1,5 @@
 
+import EarthCanvas from "@/components/canva/fechadora";
 import CarouselPlugin from "@/components/carrouselTest";
 import { getTasks } from "@/lib/call-task";
 import { getWorkwers } from "@/lib/call-worker";
@@ -12,7 +13,8 @@ export default async function Workers({
       const workers = await getWorkwers();
     return (
         <div>
-            <CarouselPlugin workers={workers} tasks={tasks} />
+            {/* <CarouselPlugin workers={workers} tasks={tasks} /> */}
+            <EarthCanvas/>
             {children}
         </div>
     );

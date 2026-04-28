@@ -1,4 +1,5 @@
 import { ArrowBigLeftDash } from "lucide-react";
+import EarthCanvas from "@/components/canva/fechadora";
 import Image from "next/image";
 
 import {
@@ -10,17 +11,12 @@ import Link from "next/link";
 
 export default function Fechadoras() {
     return (
-        <div className="grid grid-cols-[repeat(20,minmax(0,1fr))] grid-rows-[repeat(10,minmax(0,1fr))] h-full w-full  ">
-            <div className="col-start-3 col-end-5 row-start-6 row-end-8 shadow-lg text-center">
+        <div className="h-full w-full  ">
+            <div className="col-start-3 col-end-5 row-start-6 row-end-8 shadow-lg text-center h-[300px] ">
                 <HoverCard openDelay={80} closeDelay={200}>
                     <HoverCardTrigger>
                         <p>Solidos</p>
-                        <Image
-                            src="/videojet.bmp"
-                            width={400}
-                            height={400}
-                            alt="Picture of the author"
-                        />
+                        <EarthCanvas/>
                     </HoverCardTrigger>
                     <HoverCardContent>
                         <div className="flex flex-col gap-2 text-sm">
